@@ -37,19 +37,12 @@ while anchura < 100:
     anchura += 1
 pygame.display.update()
 fpsClock.tick(30)
-altura = 50
+altura = 150
 while altura < 600:       
     pygame.draw.circle(surface, (255,0,0), (350,altura), 40, 7)
     pygame.display.update()
     fpsClock.tick(30)
     pygame.draw.circle(surface, (0,0,0), (350,altura), 40, 7)
     altura += 5
-anchura = 0
-pygame.display.update()
-fpsClock.tick(30)
-while anchura < 100: 
-    pygame.draw.circle(surface, (255,150,0), (300+anchura,100), 10, 7)
-    anchura += 1
-pygame.display.update()
-fpsClock.tick(30)
+
    
