@@ -18,7 +18,7 @@ contenido = archivo.readlines()
 
 largo = len(contenido)
 contador = 0
-sprite = 1
+sprite = 1 #variable control de animacion
 while contador < largo:
 	elemento = contenido[contador].split()
 
@@ -28,7 +28,7 @@ while contador < largo:
 		#Obtenemos el tamaño y lo dividimos por 2
 		nave_w,nave_h = nave_img.get_rect().size[0], nave_img.get_rect().size[1]
 		nave_img = pygame.transform.scale(nave_img, (nave_w,nave_h))
-	elif elemento[0] == "nave2":
+	elif elemento[0] == "nave2": #Segunda nave para la animacion
 		print("Cargando grafico nave2:", elemento[1])
 		nave2_img = pygame.image.load(elemento[1])
 		#Obtenemos el tamaño y lo dividimos por 2
@@ -92,7 +92,7 @@ while not salir:
 			nodriza_x = -2*nodriza_w
 	else:
 		modulo = random.randint(1,1000) % 500
-		print(modulo)
+		#print(modulo)
 		if modulo == 0:
 			nodriza_mov = True
 
@@ -108,7 +108,7 @@ while not salir:
 	elif mar1_x <= 0:
 		marcianos_dir =1
 
-	if sprite == 1:
+	if sprite == 1: #Animacion
 		surface.blit(nave_img, (nave_x, height - nave_h))
 	else:
 		surface.blit(nave2_img, (nave_x, height - nave_h))
@@ -118,13 +118,13 @@ while not salir:
 
 	keys = pygame.key.get_pressed()
 	if keys[pygame.K_LEFT] and nave_x > 0:
-		if sprite == 1:
+		if sprite == 1: #Cambio de sprite cada LEFT
 			sprite = 2
 		else:
 			sprite = 1
 		nave_x = nave_x - nave_desp
 	elif keys[pygame.K_RIGHT] and nave_x < width - nave_w:
-		if sprite == 1:
+		if sprite == 1: #Cambio de sprite cada RIGHT
 			sprite = 2
 		else:
 			sprite = 1
