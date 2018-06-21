@@ -25,13 +25,13 @@ while contador < largo:
 	if elemento[0] == "nave":
 		print("Cargando grafico nave:", elemento[1])
 		nave_img = pygame.image.load(elemento[1])
-		#Obtenemos el tamaño y lo dividimos por 2
+		#Obtenemos el tamano y lo dividimos por 2
 		nave_w,nave_h = nave_img.get_rect().size[0], nave_img.get_rect().size[1]
 		nave_img = pygame.transform.scale(nave_img, (nave_w,nave_h))
 	elif elemento[0] == "nave2": #Segunda nave para la animacion
 		print("Cargando grafico nave2:", elemento[1])
 		nave2_img = pygame.image.load(elemento[1])
-		#Obtenemos el tamaño y lo dividimos por 2
+		#Obtenemos el tamano y lo dividimos por 2
 		nave_w,nave_h = nave_img.get_rect().size[0], nave_img.get_rect().size[1]
 		nave2_img = pygame.transform.scale(nave2_img, (nave_w,nave_h))	
 	elif elemento[0] == "marcianito1":
